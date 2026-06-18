@@ -11,23 +11,26 @@ public class Main {
         AuthenticationService authenticationService =
                 (AuthenticationService) injector.getInstance(AuthenticationService.class);
 
+        String login = "alice@gmail.com";
+        String password = "alice1234";
+
         try {
-            authenticationService.login("alice@gmail.com", "alice1234");
+            authenticationService.login(login, password);
         } catch (Exception e) {
-            System.out.println("Error while login new user. " + e.getMessage());
+            System.out.println("Error while login user. " + e.getMessage());
         }
 
         try {
-            authenticationService.register("alice@gmail.com", "alice1234");
+            authenticationService.register(login, password);
         } catch (Exception e) {
             System.out.println("Error while registering new user. " + e.getMessage());
         }
 
         try {
-            User alice = authenticationService.login("alice@gmail.com", "alice1234");
+            User alice = authenticationService.login(login, password);
             System.out.println(alice);
         } catch (Exception e) {
-            System.out.println("Error while registering new user. " + e.getMessage());
+            System.out.println("Error while login user. " + e.getMessage());
         }
     }
 }

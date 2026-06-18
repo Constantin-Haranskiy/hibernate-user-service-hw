@@ -6,10 +6,9 @@ import java.security.SecureRandom;
 
 public class HashUtil {
     private static final String CRYPTO_ALGORITHM = "SHA-512";
-    private static SecureRandom random;
+    private static final SecureRandom random = new SecureRandom();
 
     private HashUtil() {
-        random = new SecureRandom();
     }
 
     public static byte[] getRandomSalt() {
